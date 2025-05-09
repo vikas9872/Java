@@ -26,8 +26,6 @@ class Stack{
         head=newNode;
     }
     public void pop(){
-        Node currNode=head;
-
         // if no nodes are present
         if(head == null){
             System.out.println("No nodes to display");
@@ -35,15 +33,20 @@ class Stack{
 
         // if one node is present
         if(head.next==null){
-            System.out.println("Popped element: "+head.data);
+            System.out.println("Popped element single element: "+head.data);
             head=null;
+            return;
         }
 
         // if multiple nodes are present
-        System.out.println("Popped element: "+currNode.data);
+        System.out.println("Popped element: "+head.data);
         head=head.next;
     }
     public void peek(){
+        if(head == null){
+            System.out.println("No nodes to display");
+            return;
+        }
         System.out.println("Topmost element: "+head.data);
     }
     public void print(){
@@ -66,8 +69,11 @@ public class StackUsingLinkedList {
         s.print();
         System.out.println();
         s.pop();
+        s.pop();
+        s.pop();
+        s.pop();
+        s.pop();
         s.print();
         s.peek();
-        s.print();
     }
 }
